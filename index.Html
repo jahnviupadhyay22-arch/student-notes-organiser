@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ StudySpace Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>📚 StudySpace Notes ✨</h1>
+            <p>Keep your semester smart, colorful, and fully organized!</p>
+        </header>
+        <div class="stats-bar">
+            <div class="stat-pill" id="totalNotesStat">📝 Total Notes: 0</div>
+            <div class="stat-pill" id="highPriorityStat">🔥 High Priority: 0</div>
+            <div class="stat-pill" id="pinnedStat">📌 Pinned: 0</div>
+        </div>
+        <div class="filter-bar">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search notes by title, subject or content...">
+            <select id="filterSubject" class="filter-select">
+                <option value="all">🎨 All Subjects</option>
+            </select>
+        <div>
+        <div class="main-layout">
+            <form id="noteForm" class="form-card">
+                <h2>✏️ Add New Note</h2>
+                <input type="text" id="noteTitle" placeholder="📝 Note Title (e.g., Chapter 4 Summary)" required>
+                <input type="text" id="noteSubject" placeholder="🏷️ Subject (e.g., Data Structures)" required>
+                
+                <select id="notePriority">
+                    <option value="High">🔴 High Priority (Exam / Urgent)</option>
+                    <option value="Medium" selected>🟡 Medium Priority (Important)</option>
+                    <option value="Low">🟢 Low Priority (General)</option>
+                </select>
+                <div class="emoji-toolbar">
+                    <button type="button" class="emoji-btn" onclick="addEmojiPoint('👉 ')">👉 Point</button>
+                    <button type="button" class="emoji-btn" onclick="addEmojiPoint('⭐ ')">⭐ Key Rule</button>
+                    <button type="button" class="emoji-btn" onclick="addEmojiPoint('⚠️ ')">⚠️ Exam Alert</button>
+                    <button type="button" class="emoji-btn" onclick="addEmojiPoint('✅ ')">✅ Done</button>
+                </div>
+
+                <textarea id="noteContent" placeholder="✍️ Write key definitions, points, or formulas here..." required></textarea>
+                <label class="color-picker-label">🎨 Card Color Vibe:</label>
+                <div class="color-options">
+                    <div class="color-dot active" style="background: #ffe4e6;" data-theme="theme-pink" onclick="selectColor(this)"></div>
+                    <div class="color-dot" style="background: #f3e8ff;" data-theme="theme-purple" onclick="selectColor(this)"></div>
+                    <div class="color-dot" style="background: #e0f2fe;" data-theme="theme-blue" onclick="selectColor(this)"></div>
+                    <div class="color-dot" style="background: #dcfce7;" data-theme="theme-green" onclick="selectColor(this)"></div>
+                    <div class="color-dot" style="background: #fef3c7;" data-theme="theme-yellow" onclick="selectColor(this)"></div>
+                </div>
+
+                <button type="submit" class="btn-save">✨ Save Colorful Note</button>
+            </form>
+            <div id="notesContainer" class="notes-grid">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
